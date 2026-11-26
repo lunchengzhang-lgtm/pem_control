@@ -40,8 +40,8 @@ def get_recent_data(channel_id, read_key, minutes=1000):
     return df
 
 # Load Data
-ts_read_id = os.getenv('THINGSPEAK_READ_ID', '3321400')
-ts_read_key = os.getenv('THINGSPEAK_READ_KEY', '4Q4YD3ZW21602X7L')
+ts_read_id = os.environ["THINGSPEAK_READ_ID"]
+ts_read_key = os.environ["THINGSPEAK_READ_KEY"]
 df = get_recent_data(ts_read_id, ts_read_key, minutes=1000)
 
 # =========================================================
