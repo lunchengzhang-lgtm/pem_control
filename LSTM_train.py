@@ -36,9 +36,9 @@ def get_one_month_data(channel_id, read_key):
 # =========================================================
 # 2. LOAD & CLEAN DATA
 # =========================================================
-ts_read_id = os.getenv('THINGSPEAK_READ_ID', '3321400')
-ts_read_key = os.getenv('THINGSPEAK_READ_KEY', '4Q4YD3ZW21602X7L')
-ts_write_key = os.getenv('THINGSPEAK_WRITE_KEY', 'F6NHRHZ60PHVSXBP')
+ts_read_id = os.environ["THINGSPEAK_READ_ID"]
+ts_read_key = os.environ["THINGSPEAK_READ_KEY"]
+ts_write_key = os.environ["THINGSPEAK_WRITE_KEY"]
 
 df = get_one_month_data(ts_read_id, ts_read_key)
 df.rename(columns={'field1':'V', 'field2':'I', 'field3':'T', 'field4':'H2_actual'}, inplace=True)
